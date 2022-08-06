@@ -1,8 +1,6 @@
-﻿using GraphQL.Types;
-using Funcional_API.Interfaces;
-using Funcional_API.Models;
+﻿using Funcional_API.Models;
+using GraphQL.Types;
 using System;
-using System.Linq;
 
 namespace Funcional_API.Graph.Type
 {
@@ -13,7 +11,7 @@ namespace Funcional_API.Graph.Type
         {
             Field(x => x.conta, type: typeof(IntGraphType));
             Field(x => x.saldo, type: typeof(FloatGraphType));
-            
+
         }
     }
 }

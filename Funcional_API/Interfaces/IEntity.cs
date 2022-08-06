@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Funcional_API.Interfaces
+﻿namespace Funcional_API.Interfaces
 {
     public interface IEntity
     {

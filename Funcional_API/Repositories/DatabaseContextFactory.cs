@@ -13,12 +13,12 @@ namespace Funcional_API.Repositories
             var optionsBuilder = new DbContextOptionsBuilder<DatabaseContext>();
 
             var path = Directory.GetCurrentDirectory();
-           
+
             var configuration = new ConfigurationBuilder()
-               .SetBasePath(path)              
+               .SetBasePath(path)
                .AddJsonFile($"appsettings.Development.json", optional: false, reloadOnChange: true)
                .AddEnvironmentVariables()
-               .Build();           
+               .Build();
 
             var connectionString = configuration["ConnectionString"];
 

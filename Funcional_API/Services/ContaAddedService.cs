@@ -1,7 +1,4 @@
 ﻿using Funcional_API.Dto;
-using System;
-using System.Linq;
-using System.Reactive.Linq;
 using System.Reactive.Subjects;
 
 namespace Funcional_API.Services

@@ -14,7 +14,7 @@ namespace Funcional_API.Graph.Schema
             fieldService.RegisterFields();
             Mutation = resolver.Resolve<MainMutation>();
             Query = resolver.Resolve<MainQuery>();
-            Subscription = resolver.Resolve<MainSubscription>();           
+            Subscription = resolver.Resolve<MainSubscription>();
         }
     }
 }

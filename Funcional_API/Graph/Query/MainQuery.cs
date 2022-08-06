@@ -1,5 +1,5 @@
-﻿using GraphQL.Types;
-using Funcional_API.Interfaces;
+﻿using Funcional_API.Interfaces;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Hosting;
 using System;
 

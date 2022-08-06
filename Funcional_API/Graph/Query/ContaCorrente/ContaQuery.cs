@@ -1,11 +1,11 @@
-﻿using GraphQL.Types;
-using Funcional_API.Graph.Type;
+﻿using Funcional_API.Graph.Type;
 using Funcional_API.Interfaces;
 using Funcional_API.Models;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Linq;
-using GraphQL;
 
 namespace Funcional_API.Graph.Query.ContaCorrente
 {
@@ -18,7 +18,7 @@ namespace Funcional_API.Graph.Query.ContaCorrente
                  new QueryArgument<IntGraphType> { Name = "conta" }
                ),
                resolve: context =>
-               {            
+               {
                    var contaRepository = (IGenericRepository<Conta>)sp.GetService(typeof(IGenericRepository<Conta>));
                    var baseQuery = contaRepository.GetAll();
                    int conta = context.GetArgument<int>("conta");

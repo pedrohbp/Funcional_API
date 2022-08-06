@@ -1,9 +1,9 @@
-﻿using GraphQL.Types;
-using Funcional_API.Interfaces;
+﻿using Funcional_API.Interfaces;
 using Funcional_API.Models;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Hosting;
 using System;
-using GraphQL;
 
 namespace Funcional_API.Graph.Mutation
 {
@@ -11,9 +11,9 @@ namespace Funcional_API.Graph.Mutation
     {
         public void Activate(ObjectGraphType objectGraph, IWebHostEnvironment env, IServiceProvider sp)
         {
-            objectGraph.Field<IntGraphType>("deletar",
+            objectGraph.Field<IntGraphType>("deletarconta",
             arguments: new QueryArguments(
-               new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "conta" }               
+               new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "conta" }
             ),
             resolve: context =>
             {
@@ -23,8 +23,8 @@ namespace Funcional_API.Graph.Mutation
 
                 if (foundConta == null)
                 {
-                    throw new ExecutionError("Não existe esta conta");
-                }     
+                    throw new ExecutionError("Conta inexistente.");
+                }
 
                 return contaRepository.Delete(conta);
             });

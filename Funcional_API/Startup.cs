@@ -1,12 +1,15 @@
-using GraphiQl;
-using GraphQL.Server;
 using Funcional_API.Graph.Mutation;
 using Funcional_API.Graph.Query;
 using Funcional_API.Graph.Schema;
+using Funcional_API.Graph.Subscription;
 using Funcional_API.Graph.Type;
 using Funcional_API.Interfaces;
 using Funcional_API.Repositories;
 using Funcional_API.Services;
+using GraphiQl;
+using GraphQL;
+using GraphQL.Server;
+using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +17,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using GraphQL;
-using GraphQL.Server.Ui.Playground;
-using Funcional_API.Graph.Subscription;
 
 namespace Funcional_API
 {
@@ -45,7 +45,7 @@ namespace Funcional_API
             services.AddScoped<MainMutation>();
             services.AddScoped<MainQuery>();
             services.AddScoped<ContaGType>();
-            
+
 
             services.AddSingleton<ISubscriptionServices, SubscriptionServices>();
             services.AddScoped<MainSubscription>();
@@ -54,7 +54,7 @@ namespace Funcional_API
             services.AddScoped<GraphQLSchema>();
 
             services.AddGraphQL(o => { o.ExposeExceptions = _env.IsDevelopment(); })
-              .AddGraphTypes(ServiceLifetime.Scoped)             
+              .AddGraphTypes(ServiceLifetime.Scoped)
               .AddWebSockets();
 
             services.AddCors();

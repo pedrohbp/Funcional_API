@@ -34,15 +34,15 @@ namespace Funcional_API.Controllers
                 Schema = _schema,
                 Query = query.Query,
                 OperationName = query.OperationName,
-                Inputs = inputs               
+                Inputs = inputs
             };
-           
+
 
             var result = await _documentExecuter.ExecuteAsync(executionOptions).ConfigureAwait(false);
 
             if (result.Errors?.Count > 0)
             {
-               
+
 
                 var graphQLErrors = new List<string>();
                 var errors = result.Errors.GetEnumerator();

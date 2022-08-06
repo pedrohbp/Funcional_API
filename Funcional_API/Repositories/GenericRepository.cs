@@ -11,7 +11,7 @@ namespace Funcional_API.Repositories
     {
         protected readonly DatabaseContext context;
         private DbSet<T> entities;
-        
+
         public GenericRepository(DatabaseContext context)
         {
             this.context = context;

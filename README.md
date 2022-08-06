@@ -76,3 +76,9 @@ query saldo{
   }
 }
 ```
+
+Esse foi um projeto que tive certas dificuldades pois não tinha experiência com GraphQL e tive que consumir muitos tutoriais :D
+Me baseei no projeto educativo: https://github.com/killjoy2013/graphql-net-core-api-starter
+Outras fontes:
+- https://graphql.org/learn/
+- https://www.youtube.com/watch?v=HuN94qNwQmM&t

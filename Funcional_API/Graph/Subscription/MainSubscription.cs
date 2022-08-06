@@ -1,10 +1,7 @@
-﻿using GraphQL.Types;
-using Funcional_API.Interfaces;
+﻿using Funcional_API.Interfaces;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Funcional_API.Graph.Subscription
 {

@@ -1,8 +1,8 @@
-﻿using GraphQL.Resolvers;
-using GraphQL.Types;
-using Funcional_API.Dto;
+﻿using Funcional_API.Dto;
 using Funcional_API.Graph.Type;
 using Funcional_API.Interfaces;
+using GraphQL.Resolvers;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Hosting;
 using System;
 
@@ -17,10 +17,10 @@ namespace Funcional_API.Graph.Subscription
                 Name = "contaAdded",
                 Type = typeof(ContaAddedMessageGType),
                 Resolver = new FuncFieldResolver<ContaAddedMensage>(context => context.Source as ContaAddedMensage),
-                Arguments = new QueryArguments(                   
+                Arguments = new QueryArguments(
                     new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "conta" }
                 ),
-                
+
             });
         }
     }

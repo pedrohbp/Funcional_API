@@ -13,7 +13,7 @@ namespace Funcional_API.Repositories
             modelBuilder.Entity<Conta>(entity =>
             {
                 entity.Property(e => e.data_criacao).HasDefaultValueSql("(now())");
-               
+
             });
 
         }

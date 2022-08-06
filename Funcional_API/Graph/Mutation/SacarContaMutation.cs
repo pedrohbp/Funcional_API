@@ -1,11 +1,10 @@
-﻿using GraphQL.Types;
-using Funcional_API.Graph.Type;
+﻿using Funcional_API.Graph.Type;
 using Funcional_API.Interfaces;
 using Funcional_API.Models;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Hosting;
 using System;
-using Funcional_API.Dto;
-using GraphQL;
 
 namespace Funcional_API.Graph.Mutation
 {
@@ -17,11 +16,11 @@ namespace Funcional_API.Graph.Mutation
             arguments: new QueryArguments(
                new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "conta" },
                new QueryArgument<NonNullGraphType<FloatGraphType>> { Name = "valor" }
-               
+
             ),
             resolve: context =>
             {
-                
+
                 var conta = context.GetArgument<int>("conta");
                 var valor = context.GetArgument<double>("valor");
 
@@ -40,7 +39,7 @@ namespace Funcional_API.Graph.Mutation
                 {
                     foundConta.conta = conta;
                     foundConta.saldo -= valor;
-                }                          
+                }
 
                 return contaRepository.Update(foundConta);
             });
