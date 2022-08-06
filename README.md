@@ -3,6 +3,8 @@
 API para a empresa Funcional Health Tech.
 
 Stack:
+```
 C#
 GraphQL(HotChocolate)
 Postgres(via Docker)
+```
