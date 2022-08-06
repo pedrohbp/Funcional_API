@@ -1,5 +1,4 @@
 ﻿using GraphQL.Types;
-using Funcional_API.Dto;
 using Funcional_API.Graph.Type;
 using Funcional_API.Interfaces;
 using Funcional_API.Models;
@@ -13,7 +12,7 @@ namespace Funcional_API.Graph.Mutation
     {
         public void Activate(ObjectGraphType objectGraph, IWebHostEnvironment env, IServiceProvider sp)
         {
-            objectGraph.Field<ContaGType>("addConta",
+            objectGraph.Field<ContaGType>("adicionarconta",
             arguments: new QueryArguments(
                new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "conta" },
                new QueryArgument<NonNullGraphType<FloatGraphType>> { Name = "saldo" }             
