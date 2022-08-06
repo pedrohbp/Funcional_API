@@ -1,6 +1,7 @@
 <h1>Desafio Técnico</h1>
 
-API para a empresa Funcional Health Tech.
+API para a empresa Funcional Health Tech.<br/>
+Especificação: https://github.com/funcional-health/challenge/blob/master/csharp.md
 
 Stack:
 ```
